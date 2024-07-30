@@ -1,0 +1,12 @@
+const getSHA = async (octokit) => {
+    const result = await octokit.request(
+      `GET /repos/bloodstrawberry/${repo}/contents/${path}`,
+      {
+        owner: "bloodstrawberry",
+        repo: `${repo}`,
+        path: `${path}`,
+      }
+    );
+
+    return result.data.sha;
+  };
