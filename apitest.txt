@@ -1,4 +1,4 @@
-const getSHA = async (octokit) => {
+const getSHAforMainFile = async (octokit) => {
     const result = await octokit.request(
       `GET /repos/byeong-rae/test/contents/apitest.txt`,
       {
