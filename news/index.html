@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>React 브라우저 실행 테스트</title>
+  <!-- 1. React 엔진 로드 -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 2. JSX 문법을 브라우저에서 실시간으로 해석해주는 Babel 로드 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- React 컴포넌트가 렌더링될 곳 -->
+  <div id="root"></div>
+
+  <!-- 3. type="text/babel"을 적어주어야 JSX 문법을 사용할 수 있습니다. -->
+  <script type="text/babel">
+    function App() {
+      return (
+        <div>
+          <h1>안녕하세요, 브라우저에서 바로 실행하는 React입니다!</h1>
+          <p>별도의 빌드 도구 없이 Babel이 실시간으로 변환해 주고 있어요.</p>
+        </div>
+      );
+    }
+
+    // React 18 기준으로 화면에 그리 기
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+
+</body>
+</html>
